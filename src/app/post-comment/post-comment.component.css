@@ -1,0 +1,28 @@
+.moblecommentbox{
+display: none;
+}
+@media(max-width:630px){
+    .moblecommentbox{
+        display: block;
+    }
+}
+.df{
+display: flex;
+} 
+.ai {
+    align-items: center;
+}
+.jc{
+    justify-content: center;
+} 
+.postcomment{
+    height: 43px;
+    display: flex;
+    flex-basis: inherit;
+    flex-wrap: wrap;
+    background-color: white;
+    margin-right: auto;
+}
+.postcommentconatiner :focus-within{
+    border:  1px solid orange;
+}

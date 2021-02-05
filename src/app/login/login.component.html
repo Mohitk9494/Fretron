@@ -1,0 +1,45 @@
+<div class="wrapper">
+    <img src="../../assets/background-map.svg" alt="" id="backgrndimg" />
+    <div class="container">
+        <div class="ftrnlogo">
+            <img src="../../assets/fretron-white-logo .svg" alt="" />
+        </div>
+        <mat-card class="subcontainer" >
+            <div class="truck">
+                <img src="../../assets/truck.jpg" alt="" id="truckimg" />
+            </div>
+            <div class="login-detail">
+                <div>
+                    <h1>Login</h1>
+                </div>
+                <form #loginform="ngForm" (ngSubmit)="onSubmit(loginform)">
+                    <div class="details">
+                        <div class="inputcontainer">
+
+                            <div class="login-mobile">
+                                <img src="../../assets/indianFlag.png" alt="" class="indianflagimg">
+                                <label style="margin-top: 9px;">+91</label>
+                                <input type="text" name="mobileNumber" id="mobileNumber" [(ngModel)]="user.mobileNumber"
+                                     placeholder="Mobile Number"
+                                    style="width: 100%;border: none;" required />
+                            </div>
+                        </div>
+
+                        <div class="inputcontainer">
+                            <div class="login-password">
+
+                                <input type="password" id="password" name="password" [(ngModel)]="user.password"
+                                    placeholder="Enter Password" style="width: 100%;border: none;"
+                                    required />
+                            </div>
+                        </div>
+                        <button type="submit" mat-raised-button color="primary" style="width: 100%;"
+                            [disabled]="loginform.invalid">LOGIN</button>
+                    </div>
+                </form>
+            </div>
+        </mat-card>
+
+    </div>
+
+</div>

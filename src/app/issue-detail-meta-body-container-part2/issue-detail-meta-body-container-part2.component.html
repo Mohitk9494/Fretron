@@ -1,0 +1,36 @@
+<div>
+  <mat-tab-group class="tabs">
+    <mat-tab label="Activity logs">
+      <div
+        class="tab-body"
+        style="background-color: darkseagreen; overflow: hidden"
+      >
+        <div>
+          <app-activity-logs></app-activity-logs>
+        </div>
+      </div>
+      <div class="postcommentboxformobile">
+        <app-post-comment
+          (commentAction)="getCommentAction($event)"
+          [selectedTabFour]="selectedTabfour"
+        ></app-post-comment>
+      </div>
+    </mat-tab>
+    <mat-tab label="Attachments">
+      <div
+        class="tab-body"
+        style="background-color: darkseagreen; overflow: hidden"
+      >
+        <app-attachment></app-attachment>
+      </div>
+    </mat-tab>
+    <mat-tab label="Information">
+        <div
+          class="tab-body"
+          style="background-color: darkseagreen; overflow: hidden"
+        >
+          <app-information></app-information>
+        </div>
+      </mat-tab>
+  </mat-tab-group>
+</div>

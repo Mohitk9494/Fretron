@@ -1,0 +1,498 @@
+<div class="container" #container>
+  <div class="webheader">
+    <mat-toolbar class="issue-detail-header">
+      <button mat-icon-button (click)="close()">
+        <mat-icon style="background: white">arrow_back</mat-icon>
+      </button>
+      <span>My App &nbsp;</span>
+      <div class="priority">
+        <span class="prioritytype">LOW</span>
+        <mat-icon style="color: white" role="img" aria-hidden="true"
+          >keyboard_arrow_down</mat-icon
+        >
+      </div>
+      <!-- <span class="example-spacer"></span> -->
+
+      <button mat-icon-button>
+        <mat-icon color="primary">share</mat-icon>
+      </button>
+      <button mat-icon-button (click)="close()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-divider></mat-divider>
+  </div>
+  <div class="issue-detail-meta-body" #subcontainer>
+    
+    <!-- mobile header-->
+    <div class="mobileheader">
+      <div class="issue-detail-header">
+        <button mat-icon-button (click)="close()">
+          <mat-icon style="background: white">arrow_back</mat-icon>
+        </button>
+        <span>My App &nbsp;</span>
+        <div class="priority">
+          <span class="prioritytype">LOW</span>
+          <mat-icon style="color: white" role="img" aria-hidden="true"
+            >keyboard_arrow_down</mat-icon
+          >
+        </div>
+        <!-- <span class="example-spacer"></span> -->
+
+        <button mat-icon-button>
+          <mat-icon color="primary">share</mat-icon>
+        </button> 
+        <button mat-icon-button (click)="close()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <mat-divider></mat-divider>
+    </div>
+    <div class="issue-detail-meta-body-container-part1">
+      <div class="issue-detail-meta-body-title">
+        <span class="vendortype"
+          >Vendor Partner Verification
+          <mat-icon role="img" style="margin-left: 10px" aria-hidden="true"
+            >edit</mat-icon
+          >
+        </span>
+        <div class="vendorDetail">
+          <div class="vendorDetailName">
+            <app-issue-avtar></app-issue-avtar>
+            <div class="vendorDetailNameAssign">
+              <span>Assigned TO</span>
+              <div>
+                <span>Name of Person</span>
+              </div>
+            </div>
+          </div>
+          <div aria-haspopup="true" style="padding: 2px; margin-left: 20px;">
+            <span style="font-size: 12px; font-weight: 500">DUE DATE</span>
+            <div><span>December 15,6:12 PM</span></div>
+          </div>
+          <div class="rejectacceptcontainer">
+            <div class="rejectissue">
+              <span style="padding: 0px 10px; display: flex">
+                <mat-icon
+                  class="resolve-mat-icon mat-icon notranslate material-icons mat-icon-no-color"
+                  role="img"
+                  style="color: #e71d32"
+                  aria-hidden="true"
+                  >cancel</mat-icon
+                ><span style="margin-left: 10px; color: #e71d32">Reject</span>
+              </span>
+            </div>
+            <div class="acceptissue">
+              <span
+                style="
+                  padding: 0px 10px;
+                  display: flex;
+                  height: inherit;
+                  align-items: center;
+                "
+              >
+                <mat-icon
+                  class="resolve-mat-icon mat-icon notranslate material-icons mat-icon-no-color"
+                  role="img"
+                  style="color: #52a072"
+                  aria-hidden="true"
+                  >check_circle_outline
+                </mat-icon>
+                <span style="margin-left: 10px; color: #52a072">Accept</span>
+                <span style="color: #52a072">
+                  <button aria-haspopup="true" mat-icon-button="">
+                    <span class="mat-button-wrapper">
+                      <mat-icon
+                        class="mat-icon notranslate material-icons mat-icon-no-color"
+                        role="img"
+                        aria-hidden="true"
+                      >
+                        more_vert</mat-icon
+                      >
+                    </span>
+                    <span
+                      class="mat-button-ripple mat-ripple mat-button-ripple-round"
+                      matripple=""
+                    ></span>
+                    <span class="mat-button-focus-overlay"></span>
+                  </button>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="mobileview">
+                <div class="mobileviewnav" (click)="selectTab(1)">Info</div>
+                <div class="mobileviewnav" (click)="selectTab(2)">Sub Issue</div>
+                <div class="mobileviewnav" (click)="selectTab(3)">Collabrators</div>
+                <div class="mobileviewnav" (click)="selectTab(4)">Comments</div>
+            </div> -->
+      <!-- ==========Tab for Mobileview============ -->
+      <div class="isMob mobile">
+        <div class="df ai tab-group">
+          <div
+            matRipple
+            class="tab-btn fd-issue"
+            [style.color]="selectedTab === 1 ? 'black' : ''"
+            [ngClass]="{ 'selected-tab-btn': selectedTab === 1 }"
+            (click)="selectTab(1)"
+          >
+            <img
+              style="height: 20px; width: 20px"
+              src="assets/Icons/Group 123.svg"
+              alt=""
+            />
+            <span class="fw sf">Info</span>
+          </div>
+          <div
+            matRipple
+            class="tab-btn fd-issue"
+            [ngClass]="{ 'selected-tab-btn': selectedTab === 2 }"
+            (click)="selectTab(2)"
+          >
+            <div
+              class="df ai fd-issue"
+              [style.color]="selectedTab === 2 ? 'black' : ''"
+            >
+              <span class="df ai">
+                <!-- <span style="margin-right: 5px">{{ subIssues?.length }}</span> -->
+                <img
+                  style="height: 20px; width: 20px"
+                  src="assets/Icons/bx_bxs-comment-1.svg"
+                  alt=""
+                />
+              </span>
+              <span class="sf fw">Sub Issue</span>
+            </div>
+          </div>
+          <div
+            matRipple
+            class="df ai tab-btn fd-issue"
+            [style.color]="selectedTab === 3 ? 'black' : ''"
+            [ngClass]="{ 'selected-tab-btn': selectedTab === 3 }"
+            (click)="selectTab(3)"
+          >
+            <span class="df ai">
+              <span style="margin-right: 5px"></span>
+              <img
+                style="height: 20px; width: 20px"
+                src="assets/Icons/x-men 2.svg"
+                alt=""
+              />
+            </span>
+            <span class="sf fw">Collabrators</span>
+          </div>
+          <div
+            matRipple
+            class="tab-btn fd-issue"
+            [ngClass]="{ 'selected-tab-btn': selectedTab === 4 }"
+            (click)="selectTab(4)"
+          >
+            <div
+              class="df ai fd-issue"
+              [style.color]="selectedTab === 4 ? 'black' : ''"
+            >
+              <span class="df ai">
+                <!-- <span style="margin-right: 5px">{{
+                        issueDetails?.comments?.length
+                      }}</span> -->
+                <mat-icon>chat_bubble_outline</mat-icon>
+              </span>
+              <span class="fw sf">Comments</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="padding: 0px 10px">
+        <!-- Description Start -->
+        <div #info style="display: flex; flex-direction: column">
+          <div style="padding-bottom: 5px; display: flex; align-items: center">
+            <span class="issue">Description</span>
+            <div style="margin-left: auto">
+              <button
+                 mat-icon-button
+              >
+                  <mat-icon
+                                       role="img"
+                    aria-hidden="true"
+                    
+                    (click)="isDescriptionDisable=false"
+                    
+                  >
+                   {{isDescriptionDisable?'edit':'save'}}
+                  </mat-icon>
+              </button>
+              <button
+                mat-icon-button=""
+                (click)="openDesc()"
+              >
+                <span class="mat-button-wrapper">￼
+
+                  <mat-icon
+                    role="img"
+                    aria-hidden="true"
+
+                  >
+                    {{ maticontype }}
+                  </mat-icon>
+                </span>
+                <span
+                  
+                  
+                >
+                </span>
+                <span > </span>
+              </button>
+            </div>
+          </div>
+          <div *ngIf="show">
+            <input type="text" #changeDescription class="input" [disabled]="isDescriptionDisable" placeholder="Description" />
+          </div>
+          <!-- custom field start -->
+          <div
+            style="
+              border-top: 1px solid #f0f3f6;
+              padding-bottom: 5px;
+              display: flex;
+              align-items: center;
+            "
+          >
+            <span class="issue">Fields</span>
+            <div style="margin-left: auto">
+              <button
+                class="mat-focus-indicator mat-icon-button mat-button-base"
+                mat-icon-button=""
+                (click)="openFields()"
+              >
+                <span class="mat-button-wrapper">
+                  <mat-icon
+                    class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted"
+                    role="img"
+                    aria-hidden="true"
+                    data-mat-icon-type="font"
+                  >
+                    {{ maticontype1 }}
+                  </mat-icon>
+                </span>
+                <span
+                  class="mat-button-ripple mat-ripple mat-button-ripple-round"
+                  matripple=""
+                >
+                </span>
+                <span class="mat-button-focus-overlay"> </span>
+              </button>
+            </div>
+          </div>
+          <div *ngIf="show1" class="filedinputcontainer">
+            <div
+              class="customfieldconatiner"
+              style="
+                flex-wrap: wrap;
+                justify-content: space-between;
+                display: flex;
+              "
+            >
+              <div class="customfield">
+                <div class="fieldinput">
+                  <span>FleetOwnerName</span>
+                  <input
+                    type="text"
+                    class="input"
+                    disabled
+                    value="Fleet Owner Name"
+                  />
+                </div>
+              </div>
+              <div class="customfield">
+                <div class="fieldinput">
+                  <span>FleetOwnerName</span>
+                  <input
+                    type="text"
+                    class="input"
+                    disabled
+                    value="Fleet Owner Name"
+                  />
+                </div>
+              </div>
+              <div class="customfield">
+                <div class="fieldinput">
+                  <span>FleetOwnerName</span>
+                  <input
+                    type="text"
+                    class="input"
+                    disabled
+                    value="Fleet Owner Name"
+                  />
+                </div>
+              </div>
+              <div class="customfield">
+                <div class="fieldinput">
+                  <span>FleetOwnerName</span>
+                  <input
+                    type="text"
+                    class="input"
+                    disabled
+                    value="Fleet Owner Name"
+                  />
+                </div>
+              </div>
+              <div class="customfield">
+                <div class="fieldinput">
+                  <span>FleetOwnerName</span>
+                  <input
+                    type="text"
+                    class="input"
+                    disabled
+                    value="Fleet Owner Name"
+                  />
+                </div>
+              </div>
+              <div class="customfield">
+                <div class="fieldinput">
+                  <span>FleetOwnerName</span>
+                  <input
+                    type="text"
+                    class="input"
+                    disabled
+                    value="Fleet Owner Name"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Sub issue Start -->
+        <div #subIssue style="display: flex; flex-direction: column">
+          <div
+            style="
+              border-top: 1px solid #f0f3f6;
+              padding-bottom: 5px;
+              display: flex;
+              align-items: center;
+            "
+          >
+            <span class="issue">Sub issue</span>
+            <div style="margin-left: auto">
+              <button
+                class="mat-focus-indicator mat-icon-button mat-button-base"
+                mat-icon-button=""
+                (click)="openSubissue()"
+              >
+                <span class="mat-button-wrapper">
+                  <mat-icon
+                    class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted"
+                    role="img"
+                    aria-hidden="true"
+                    data-mat-icon-type="font"
+                  >
+                    {{ maticontype2 }}
+                  </mat-icon>
+                </span>
+                <span
+                  class="mat-button-ripple mat-ripple mat-button-ripple-round"
+                  matripple=""
+                >
+                </span>
+                <span class="mat-button-focus-overlay"> </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Colllabrators Start -->
+        <div #collabrators style="display: flex; flex-direction: column">
+          <div
+            style="
+              border-top: 1px solid #f0f3f6;
+              padding-bottom: 5px;
+              display: flex;
+              align-items: center;
+            "
+          >
+            <span class="issue">Issue Created By</span>
+            <div style="margin-left: auto">
+              <button
+                class="mat-focus-indicator mat-icon-button mat-button-base"
+                mat-icon-button=""
+                (click)="openIssueCreatedby()"
+              >
+                <span class="mat-button-wrapper">
+                  <mat-icon
+                    class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted"
+                    role="img"
+                    aria-hidden="true"
+                    data-mat-icon-type="font"
+                  >
+                    {{ maticontype3 }}
+                  </mat-icon>
+                </span>
+                <span
+                  class="mat-button-ripple mat-ripple mat-button-ripple-round"
+                  matripple=""
+                >
+                </span>
+                <span class="mat-button-focus-overlay"> </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Comment Start-->
+        <div #comments class="isMob">
+          <app-issue-detail-meta-body-container-part2
+            (commentAction)="getCommentMob($event)"
+            [selectedTabfour]="selectedTab"
+          ></app-issue-detail-meta-body-container-part2>
+        </div>
+      </div>
+      <div class="prevnextissue">
+        <div class="prebtnissue">
+          <button mat-flat-button>
+            <span style="display: flex; align-items: center">
+              <mat-icon class="btncolor">arrow_back</mat-icon>
+              &nbsp;<span class="btncolor">Previous</span>
+            </span>
+          </button>
+        </div>
+        <div class="nextbtnissue">
+          <button mat-flat-button>
+            <span
+              style="display: flex; align-items: center"
+              style="display: flex; align-items: center"
+            >
+              <span class="btncolor">Next</span>&nbsp;
+              <mat-icon class="btncolor">arrow_forward</mat-icon>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="issue-detail-meta-body-container-part2 isWeb">
+      <!-- <div>
+                <mat-tab-group class="tabs">
+                    <mat-tab label="Activity logs">
+                        <div class="tab-body" style="background-color: darkseagreen;overflow: hidden;">
+                            <div>
+                                <app-activity-logs></app-activity-logs>
+                            </div>
+                        </div>
+                        <div style="width: 100%;
+                         top:calc(98vh - 149px);
+                        bottom: 0px;
+                        position: absolute;">
+                       
+                            <app-post-comment></app-post-comment>
+                       
+                    </div>
+
+                    </mat-tab>
+                    <mat-tab label="Attachments">
+                        <div class="tab-body" style="background-color: darkseagreen;overflow: hidden;">
+                            <app-attachment></app-attachment>
+                        </div>
+                    </mat-tab>
+                </mat-tab-group>
+            </div> -->
+      <app-issue-detail-meta-body-container-part2></app-issue-detail-meta-body-container-part2>
+    </div>
+  </div>
+</div>

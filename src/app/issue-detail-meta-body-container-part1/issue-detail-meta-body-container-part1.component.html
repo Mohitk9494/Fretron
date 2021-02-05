@@ -1,0 +1,295 @@
+<div class="issue-detail-meta-body-title">
+    <span class="vendortype">Vendor Partner Verification
+        <mat-icon role="img" style="margin-left: 10px;" aria-hidden="true">edit</mat-icon>
+    </span>
+    <div class="vendorDetail">
+        <div class="vendorDetailName">
+            <app-issue-avtar></app-issue-avtar>
+            <div class="vendorDetailNameAssign">
+                <span>Assigned TO</span>
+                <div>
+                    <span>Name of Person</span>
+                </div>
+            </div>
+        </div>
+        <div aria-haspopup="true" style="padding: 2px; margin-left: 20px"><span
+                style="font-size: 12px;font-weight: 500;">DUE DATE</span>
+            <div><span>December 15,6:12 PM</span></div>
+        </div>
+        <div class="rejectacceptcontainer">
+            <div class="rejectissue">
+                <span style="padding: 0px 10px;display: flex;">
+                    <mat-icon class="resolve-mat-icon mat-icon notranslate material-icons mat-icon-no-color" role="img"
+                        style="color: #e71d32;" aria-hidden="true">cancel</mat-icon><span
+                        style="margin-left: 10px;color: #e71d32;">Reject</span>
+                </span>
+
+            </div>
+            <div class="acceptissue">
+                <span style="padding: 0px 10px;
+            display: flex;
+            height: inherit;
+            align-items: center;">
+                    <mat-icon class="resolve-mat-icon mat-icon notranslate material-icons mat-icon-no-color" role="img"
+                        style="color: #52A072;" aria-hidden="true">check_circle_outline</mat-icon>
+                    <span style="margin-left: 10px;color: #52A072;">Accept</span>
+                    <span style="color: #52A072;">
+                        <button aria-haspopup="true" mat-icon-button="">
+                            <span class="mat-button-wrapper">
+                                <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color" role="img"
+                                    aria-hidden="true">
+                                    more_vert</mat-icon>
+                            </span>
+                            <span class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></span>
+                            <span class="mat-button-focus-overlay"></span>
+                        </button>
+                    </span>
+                </span>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mobileview">
+    <div class="mobileviewnav" (click)="info()">Info</div>
+    <div class="mobileviewnav" (click)="subissue()">Sub Issue</div>
+    <div class="mobileviewnav">Collabrators</div>
+    <div class="mobileviewnav">Comments</div>
+</div>
+<div style="padding: 0px 10px">
+    <!-- Description Start -->
+    <div  #info style="display: flex;flex-direction: column;">
+        <div style="padding-bottom: 5px;display: flex;align-items: center;">
+            <span class="issue">Description</span>
+            <div style="margin-left: auto">
+                <button class="mat-focus-indicator mat-icon-button mat-button-base" mat-icon-button="">
+                    <span class="mat-button-wrapper">
+                        <mat-icon class="launch-btn mat-icon notranslate material-icons mat-icon-no-color" role="img"
+                            aria-hidden="true" data-mat-icon-type="font">
+                            edit
+                        </mat-icon>
+                    </span>
+                    <span class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></span>
+                    <span class="mat-button-focus-overlay">
+                    </span>
+                </button>
+                <button class="mat-focus-indicator mat-icon-button mat-button-base" mat-icon-button=""
+                    (click)="openDesc()">
+                    <span class="mat-button-wrapper">
+                        <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted"
+                            role="img" aria-hidden="true" data-mat-icon-type="font">
+                            {{maticontype}}
+                        </mat-icon>
+
+                    </span>
+                    <span class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple="">
+
+                    </span>
+                    <span class="mat-button-focus-overlay">
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div *ngIf="show">
+            <h1>Mohit</h1>
+            <p>Mohit</p>
+        </div>
+        <!-- custom field start -->
+        <div style="border-top:1px solid #f0f3f6;padding-bottom: 5px;display: flex;align-items: center;">
+            <span class="issue">Fields</span>
+            <div style="margin-left: auto">
+                <button class="mat-focus-indicator mat-icon-button mat-button-base" mat-icon-button=""
+                    (click)="openFields()">
+                    <span class="mat-button-wrapper">
+                        <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted"
+                            role="img" aria-hidden="true" data-mat-icon-type="font">
+                            {{maticontype1}}
+                        </mat-icon>
+
+                    </span>
+                    <span class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple="">
+
+                    </span>
+                    <span class="mat-button-focus-overlay">
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div *ngIf="show1" class="filedinputcontainer">
+            <div style="display: flex;">
+                <div class="fieldinput" style="margin-right: auto;">
+                    <span>FleetOwnerName</span>
+                    <input type="text" class="input" disabled value="Fleet Owner Name" />
+                </div>
+                <div class="fieldinput">
+                    <span>FleetOwnerName</span>
+                    <input type="text" class="input" disabled value="Fleet Owner Name" />
+                </div>
+            </div>
+            <div style="display: flex;">
+                <div class="fieldinput" style="margin-right: auto;">
+                    <span>FleetOwnerName</span>
+                    <input type="text" class="input" disabled value="Fleet Owner Name" />
+                </div>
+                <div class="fieldinput">
+                    <span>FleetOwnerName</span>
+                    <input type="text" class="input" disabled value="Fleet Owner Name" />
+                </div>
+            </div>
+            <div style="display: flex;">
+                <div class="fieldinput" style="margin-right: auto;">
+                    <span>FleetOwnerName</span>
+                    <input type="text" class="input" disabled value="Fleet Owner Name" />
+                </div>
+                <div class="fieldinput">
+                    <span>FleetOwnerName</span>
+                    <input type="text" class="input" disabled value="Fleet Owner Name" />
+                </div>
+            </div>
+            <div style="display: flex;">
+                <div class="fieldinput" style="margin-right: auto;">
+                    <span>FleetOwnerName</span>
+                    <input type="text" class="input" disabled value="Fleet Owner Name" />
+                </div>
+                <div class="fieldinput">
+                    <span>FleetOwnerName</span>
+                    <input type="text" class="input" disabled value="Fleet Owner Name" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Sub issue Start -->
+    <div #subIssue style="display: flex;flex-direction: column;">
+        <div style="border-top:1px solid #f0f3f6;padding-bottom: 5px;display: flex;align-items: center;">
+            <span class="issue">Sub issue</span>
+            <div style="margin-left: auto">
+                <button class="mat-focus-indicator mat-icon-button mat-button-base" mat-icon-button=""
+                    (click)="openSubissue()">
+                    <span class="mat-button-wrapper">
+                        <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted"
+                            role="img" aria-hidden="true" data-mat-icon-type="font">
+                            {{maticontype2}}
+                        </mat-icon>
+
+                    </span>
+                    <span class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple="">
+
+                    </span>
+                    <span class="mat-button-focus-overlay">
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Colllabrators Start -->
+    <div  #collabrators style="display: flex;flex-direction: column;">
+        <div style="border-top:1px solid #f0f3f6;padding-bottom: 5px;display: flex;align-items: center;">
+            <span class="issue">Issue Created By</span>
+            <div style="margin-left: auto">
+                <button class="mat-focus-indicator mat-icon-button mat-button-base" mat-icon-button=""
+                    (click)="openIssueCreatedby()">
+                    <span class="mat-button-wrapper">
+                        <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted"
+                            role="img" aria-hidden="true" data-mat-icon-type="font">
+                            {{maticontype3}}
+                        </mat-icon>
+
+                    </span>
+                    <span class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple="">
+
+                    </span>
+                    <span class="mat-button-focus-overlay">
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Comment Start-->
+    <div #comments class="isMob">
+        <app-issue-detail-meta-body-container-part2></app-issue-detail-meta-body-container-part2>
+
+    </div>
+</div>
+<div class="prevnextissue">
+    <div class="prebtnissue">
+        <button mat-flat-button>
+            <span style="display: flex;align-items: center;">
+                <mat-icon class="btncolor">arrow_back</mat-icon>
+                &nbsp;<span class="btncolor">Previous</span>
+
+            </span>
+        </button>
+    </div>
+    <div class="nextbtnissue">
+
+        <button mat-flat-button>
+            <span style="display: flex;align-items: center;" style="display: flex;align-items: center;">
+                <span class="btncolor">Next</span>&nbsp;
+                <mat-icon class="btncolor">arrow_forward</mat-icon>
+            </span>
+        </button>
+    </div>
+</div>
+<!-- <div #test>
+    <div>
+        <mat-expansion-panel id="info" class="expansionpanel" [expanded]="step">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="vendordescription">
+                    Description
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+                This is the content. Add content Detail.
+            </p>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="step">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="vendordescription">
+                    Fields
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="filedinputs">
+                <div style="display: flex;margin-right: auto;
+                flex-direction: column;
+                                ">
+                    <label>Field1 </label>
+                    <input type="text" class="input" placeholder="field detail" disabled />
+
+                </div>
+                <div style="display: flex;flex-direction: column;
+            ">
+                    <label>Field2 </label>
+                    <input type="text" class="input" placeholder="field detail" disabled />
+
+                </div>
+            </div>
+
+        </mat-expansion-panel>
+    </div>
+    <div>
+        <mat-expansion-panel id="subissue" [expanded]="step">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="vendordescription">
+                    Sub Issues
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+                This is the content. Add content Detail.
+            </p>
+        </mat-expansion-panel>
+    </div>
+    <div>
+        <mat-expansion-panel [expanded]="step">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="vendordescription">
+                    Issue Created By
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+                This is the content. Add content Detail.
+            </p>
+        </mat-expansion-panel>
+    </div>
+</div>  -->

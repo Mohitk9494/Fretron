@@ -1,0 +1,26 @@
+<div class="moblecommentbox" *ngIf="show && selectedTabFour !== 4">
+  <div class="df ai jc" style="width: 96%">
+    <span style="margin-right: auto"> Comments</span
+    ><mat-icon
+      style="cursor: pointer"
+      role="img"
+      aria-hidden="true"
+      data-mat-icon-type="font"
+      (click)="postCommientMob()"
+      >keyboard_arrow_down
+    </mat-icon>
+  </div>
+</div>
+<div class="postcommentconatiner" style="width:100%">
+  <div class="postcomment">
+    <input
+      type="text" 
+      style="border: none; outline: none; margin-right: auto"
+      placeholder="Write a comment(...)"
+    />
+    <button mat-flat-button (click) ="addCommentAttachmentMethod()">
+      <img src="../../assets/attechment.svg" />
+    </button>
+    <input type="file" style="visibility: hidden;" #addCommentAttachment/>
+  </div>
+</div>
